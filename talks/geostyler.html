@@ -1,0 +1,943 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="../public/assets/geostyler/geostyler_logo.svg">
+
+		<title>GeoStyler - One Tool for all Styles</title>
+
+		<link rel="stylesheet" href="../public/reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../public/reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../public/reveal.js/dist/theme/simple.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../public/reveal.js/plugin/highlight/monokai.css">
+    <style>
+      section {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        top: unset !important;
+        height: 100%;
+      }
+      .slide-header {
+
+      }
+
+      .slide-content-default {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .slide-content-horizontal {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: small;
+      }
+
+      footer img {
+        margin: 0 !important;
+      }
+
+      .blurry-banner {
+        width: 100%;
+        backdrop-filter: blur(8px) grayscale(100%);
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 40px;
+      }
+
+      .gap {
+        gap: 100px;
+      }
+
+      .r-stack img {
+        max-height: 850px;
+      }
+
+      .img-shadow {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .code-small>code {
+        overflow: hidden !important;
+      }
+
+      .reveal section a.email {
+        background-image: url("../public/assets/mail-logo.png");
+        background-position: left 0.55em;
+      }
+
+      .reveal section a.github {
+        background-image: url("../public/assets/github-logo.png");
+      }
+
+      .reveal section a.url {
+        background-image: url("../public/assets/url-logo.png");
+      }
+
+      .reveal section a.npm {
+        background-image: url("../public/assets/npm-logo.svg");
+        background-position: left 0.55em;
+      }
+
+      .reveal section a.twitter {
+        background-image: url("../public/assets/twitter-logo.png");
+      }
+
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+        <section id="title"
+          data-background-image="../public/assets/geostyler/geostyler_logo.svg"
+          data-background-size="auto 85%">
+          <div class="fragment slide-content-default blurry-banner" style="justify-content: center; padding: 0;">
+            <h1>GeoStyler - One Tool for all Styles</h1>
+            <p>
+              <small>Jan Suleiman, terrestris GmbH &amp; Co. KG</small> <br />
+              <small>Daniel Koch, terrestris GmbH &amp; Co. KG</small> <br />
+            </p>
+              <small>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</small>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h2>Jan Suleiman</h2>
+            <div class="slide-content-horizontal gap" style="flex: unset; justify-content: center; align-items: start;">
+              <div>
+                <img src="../public/assets/js.jpeg" class="plain" width="200"/><br />
+                <small>
+                  <a class="email" href="mailto:suleiman@terrestris.de">suleiman@terrestris.de</a><br />
+                  <a class="github" href="https://github.com/jansule/">@jansule</a><br />
+                </small><br />
+              </div>
+              <ul>
+                <li>M.Sc. Geoinformatics</li>
+                <li>Full-Stack Developer<br />@terrestris, Bonn</li>
+                <li>GeoStyler Core Developer</li>
+              </ul>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <!-- TABLE OF CONTENTS -->
+        <section>
+          <h2 class="slide-header">Content</h2>
+          <div class="slide-content-default gap" style="justify-content: center;">
+            <ol>
+              <li>What is GeoStyler?</li>
+              <li>New Features</li>
+              <li>News from the Community</li>
+              <li>What's next?</li>
+            </ol>
+            <small>Link to the presentation: <a href="https://terrestris.github.io/foss4g2023/talks/geostyler.html">https://terrestris.github.io/foss4g2023/talks/geostyler.html</a></small>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">What is GeoStyler?</h2>
+          <div class="slide-content-default gap" style="justify-content: center;">
+            <ul>
+              <li>Graphical style-editor for geodata</li>
+              <li>Converter of styling formats</li>
+            </ul>
+            <img src="../public/assets/geostyler/osgeo.svg" height="150px" />
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>What is GeoStyler?</h2>
+          <div class="slide-content-default">
+            <span>Graphical style-editor for geodata</span>
+            <div class="r-stack">
+              <!-- TODO update images -->
+              <img class="img-shadow" src="../public/assets/geostyler/geostyler-demo.png" />
+              <img class="fragment img-shadow" src="../public/assets/geostyler/shogun.png" />
+              <img class="fragment img-shadow" src="../public/assets/geostyler/geoserver.png" />
+              <img class="fragment img-shadow" src="../public/assets/geostyler/bismap.png" />
+              <!-- <img class="fragment img-shadow" src="../assets/geostyler/geoportal_koblenz.png" /> -->
+              <span class="fragment fade-in-then-out blurry-banner" style="padding-left: 0; padding-right: 0;">GeoStyler is NOT an application</span><br />
+              <span class="fragment blurry-banner" style="padding-left: 0; padding-right: 0;">GeoStyler is a LIBRARY,<br />that you can integrate into your own applications</span>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>What is GeoStyler?</h2>
+          <div class="slide-content-default">
+            <span>Converter of styling formats</span>
+            <img src="../public/assets/geostyler/parsers.png" height="600px"/>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>Which problems solves GeoStyler?</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>Editing of styles…</h4>
+            <div class="slide-content-horizontal gap" style="flex: unset">
+              <pre class="code-small" style="height: 458px"><code data-trim>
+                LAYER
+                  NAME "point_simple_point"
+                  TYPE POINT
+                  DATA "../shapes/points.shp"
+                  EXTENT -180 -90 180 90
+                  METADATA
+                    "wms_title" "point_simple_point"
+                    "wms_srs" "EPSG:4326"    
+                  END
+                  CLASS
+                    STYLE
+                      SYMBOL "circle"
+                      COLOR 0 255 0
+                      SIZE 15
+                    END
+                  END
+                END
+              </code></pre>
+              <img class="img-shadow" src="../public/assets/geostyler/card-editor.png" height="458px"/>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>Which problems solves GeoStyler?</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>…without expert knowledge…</h4>
+            <div class="slide-content-horizontal gap" style="flex: unset; width: 600px">
+                <pre class="code-small" style="height: 458px; width: 486px;"><code data-trim>
+                  LAYER
+                    NAME "point_simple_point"
+                    TYPE POINT
+                    DATA "../shapes/points.shp"
+                    EXTENT -180 -90 180 90
+                    METADATA
+                      "wms_title" "point_simple_point"
+                      "wms_srs" "EPSG:4326"    
+                    END
+                    CLASS
+                      STYLE
+                        SYMBOL "circle"
+                        COLOR 0 255 0
+                        SIZE 15
+                      END
+                    END
+                  END
+                </code></pre>
+                <pre class="code-small" style="height: 458px; width: 486px;"><code data-trim>
+                  &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+                  &lt;StyledLayerDescriptor version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se"&gt;
+                    &lt;NamedLayer&gt;
+                      &lt;se:Name&gt;Demo Style&lt;/se:Name&gt;
+                      &lt;UserStyle&gt;
+                        &lt;se:Name&gt;Demo Style&lt;/se:Name&gt;
+                        &lt;se:FeatureTypeStyle&gt;
+                          &lt;se:Rule&gt;
+                            &lt;se:Name&gt;Rule 1&lt;/se:Name&gt;
+                            &lt;se:PointSymbolizer uom="http://www.opengeospatial.org/se/units/pixel"&gt;
+                              &lt;se:Graphic&gt;
+                                &lt;se:Mark&gt;
+                                  &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;
+                                &lt;/se:Mark&gt;
+                              &lt;/se:Graphic&gt;
+                            &lt;/se:PointSymbolizer&gt;
+                          &lt;/se:Rule&gt;
+                        &lt;/se:FeatureTypeStyle&gt;
+                      &lt;/UserStyle&gt;
+                    &lt;/NamedLayer&gt;
+                  &lt;/StyledLayerDescriptor&gt;
+                </code></pre>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>Which problems solves GeoStyler?</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>…automatable</h4>
+            <div>
+              <span>GeoStyler CLI</span>
+              <pre style="width: unset" class="language-bash"><code data-trim>
+                  geostyler -s qgis -t sld -o output.sld input.qml
+              </code></pre>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+        <!-- <section data-transition="none"> -->
+          <h2>How can I use GeoStyler?</h2>
+          <div class="slide-content-horizontal">
+            <ul>
+              <li>Interactive editor in web applications</li>
+              <li style="color:rgba(0, 0, 0, 0.3)">Conversion between styling formats</li>
+              <li style="color:rgba(0, 0, 0, 0.3)">Harmonization of data sources</li>
+            </ul>
+            <div>
+                <img class="img-shadow" src="../public/assets/geostyler/shogun.png" />
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+        <!-- <section data-transition="none"> -->
+          <h2>How can I use GeoStyler?</h2>
+          <div class="slide-content-horizontal">
+            <ul style="flex: 1">
+              <li style="color:rgba(0, 0, 0, 0.3)">Interactive editor in web applications</li>
+              <li>Conversion between styling formats</li>
+              <li style="color:rgba(0, 0, 0, 0.3)">Harmonization of data sources</li>
+            </ul>
+            <div class="slide-content-default" style="flex: 2; height: 100%">
+              <div class="slide-content-horizontal" style="flex: unset">
+                <img src="../public/assets/geostyler/shogun.png" height="100px"/>
+              </div>
+              <div class="slide-content-default">
+                <img src="../public/assets/geostyler/qgis-to-ol.png" />
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+        <!-- <section data-transition="none"> -->
+          <h2>How can I use GeoStyler?</h2>
+          <div class="slide-content-horizontal">
+            <ul style="flex: 1">
+              <li style="color:rgba(0, 0, 0, 0.3)">Interactive editor in web applications</li>
+              <li style="color:rgba(0, 0, 0, 0.3)">Conversion between styling formats</li>
+              <li>Harmonization of data sources</li>
+            </ul>
+            <div class="slide-content-default" style="flex: 2; height: 100%;">
+              <div class="slide-content-horizontal gap" style="flex: unset">
+                <img src="../public/assets/geostyler/shogun.png" height="100px"/>
+                <img src="../public/assets/geostyler/qgis-to-ol.png" height="100px"/>
+              </div>
+              <div class="slide-content-default">
+                <img src="../public/assets/geostyler/gs-to-qgis-to-ol.png" />
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+        <!-- <section data-transition="none"> -->
+          <h2>How can I use GeoStyler?</h2>
+          <div class="slide-content-horizontal">
+            <ul style="flex: 1">
+              <li>Interactive editor in web applications</li>
+              <li>Conversion between styling formats</li>
+              <li>Harmonization of data sources</li>
+            </ul>
+            <div class="slide-content-default" style="flex: 2">
+              <img src="../public/assets/geostyler/shogun.png" height="200px"/>
+              <img src="../public/assets/geostyler/qgis-to-ol.png" height="200px"/>
+              <img src="../public/assets/geostyler/gs-to-qgis-to-ol.png" height="200px"/>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+
+        <section>
+          <div class="slide-content-default">
+            <h2>New Features</h2>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default">
+            <div class="slide-content-horizontal gap" style="flex: unset">
+              <div>
+                <h4>i18n</h4>
+                <span>French and Hungarian translations</span><br />
+                <small>Additional languages: 🇨🇳 🇺🇸 🇩🇪 🇪🇸</small>
+              </div>
+              <img class="img-shadow" src="../public/assets/geostyler/french_translation.png" width="600px" />
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default">
+            <div class="slide-content-horizontal gap" style="flex: unset">
+              <div>
+                <h4>Layout</h4>
+                <span>Card Layout <sup style="font-size: small;">Beta</sup></span><br />
+                <small>Especially useful when having limited widths</small>
+              </div>
+              <!-- <img src="../assets/geostyler/card-style-all.png" height="600px" /> -->
+              <img class="img-shadow" src="../public/assets/geostyler/card-style-style.png" height="600px" />
+              <img class="fragment img-shadow" src="../public/assets/geostyler/card-style-rule.png" height="600px" />
+              <img class="fragment img-shadow" src="../public/assets/geostyler/card-style-symbolizer.png" height="600px" />
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default" style="align-items: flex-start; padding-left: 20px">
+            <div class="slide-content-horizontal gap" style="flex: unset;">
+              <div>
+                <h4>Layout</h4>
+                <span>Card Layout <sup style="font-size: small;">Beta</sup></span><br />
+                <small>Especially useful when having limited widths</small>
+              </div>
+              <img class="img-shadow" src="../public/assets/geostyler/shogun.png" height="600px"/>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <div>
+              <h4>Parser</h4>
+              <span>Mapfile Parser</span><br />
+              <small>See <a href="https://github.com/geostyler/geostyler-mapfile-parser">geostyler-mapfile-parser</a></small>
+            </div>
+            <pre class="code-small" style="width: unset; height: 458px"><code data-trim>
+              LAYER
+                NAME "point_simple_point"
+                TYPE POINT
+                DATA "../shapes/points.shp"
+                EXTENT -180 -90 180 90
+                METADATA
+                  "wms_title" "point_simple_point"
+                  "wms_srs" "EPSG:4326"    
+                END
+                CLASS
+                  STYLE
+                    SYMBOL "circle"
+                    COLOR 0 255 0
+                    SIZE 15
+                  END
+                END
+              END
+            </code></pre>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default">
+            <div>
+              <h4>Parser</h4>
+              <span>Support for SLD 1.1</span><br />
+              <small>See <a href="https://github.com/geostyler/geostyler-sld-parser">geostyler-sld-parser</a></small>
+            </div>
+            <pre class="code-small code-wide"><code data-trim>
+              &lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+              &lt;StyledLayerDescriptor version="1.1.0" xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" xmlns="http://www.opengis.net/sld" xmlns:ogc="http://www.opengis.net/ogc" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:se="http://www.opengis.net/se"&gt;
+                &lt;NamedLayer&gt;
+                  &lt;se:Name&gt;Demo Style&lt;/se:Name&gt;
+                  &lt;UserStyle&gt;
+                    &lt;se:Name&gt;Demo Style&lt;/se:Name&gt;
+                    &lt;se:FeatureTypeStyle&gt;
+                      &lt;se:Rule&gt;
+                        &lt;se:Name&gt;Rule 1&lt;/se:Name&gt;
+                        &lt;se:PointSymbolizer uom="http://www.opengeospatial.org/se/units/pixel"&gt;
+                          &lt;se:Graphic&gt;
+                            &lt;se:Mark&gt;
+                              &lt;se:WellKnownName&gt;circle&lt;/se:WellKnownName&gt;
+                            &lt;/se:Mark&gt;
+                          &lt;/se:Graphic&gt;
+                        &lt;/se:PointSymbolizer&gt;
+                      &lt;/se:Rule&gt;
+                    &lt;/se:FeatureTypeStyle&gt;
+                  &lt;/UserStyle&gt;
+                &lt;/NamedLayer&gt;
+              &lt;/StyledLayerDescriptor&gt;
+            </code></pre>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-horizontal gap" style="justify-content: center;">
+            <div>
+              <h4>Attributive labels</h4>
+              <pre style="width: unset"><code data-trim>
+                State: {{federal_state}} 
+                Population: {{pop}}
+              </code></pre>
+              <small>Incl. auto-complete</small>
+            </div>
+            <img class="img-shadow" src="../public/assets/geostyler/label-templates.png" />
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-horizontal">
+            <div class="slide-content-default" style="flex: unset; justify-content: center;">
+              <h4 class="fragment" data-fragment-index="1">Expressions</h4>
+              <pre style="width: unset"><code data-trim>
+                Opacity: {{pop / total_pop}} 
+                Color: {{'#aabb' + pop}} 
+              </code></pre>
+              <ul class="fragment" data-fragment-index="1">
+                <li>Attributive styling</li>
+                <li>Compact rules</li>
+              </ul>
+              <!-- <br />
+              <small class="fragment" data-fragment-index="1">Umgesetzt in geostyler-style</small> -->
+            </div>
+            <div class="fragment slide-content-default" style="flex: unset; gap: 50px">
+              <div class="slide-content-default" style="flex: unset">
+                <img class="img-shadow" src="../public/assets/geostyler/expression-table-full.png" width="600px"/>
+                <small>Classification without expressions</small>
+              </div>
+              <span>⬇</span>
+              <div class="slide-content-default" style="flex: unset">
+                <img class="img-shadow" src="../public/assets/geostyler/expression-table-slim.png" width="600px"/>
+                <small>Classification with expressions</small>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default">
+            <h4>GeoStyler Context</h4>
+            <span>Global configuration of GeoStyler</span>
+            <div class="slide-content-horizontal">
+              <pre><code data-trim data-line-numbers="1-24|1-20|4-6|7-9|11-13|15-19|23|22-24" style="max-height: unset; width: 700px;">
+                const myContext = {
+                  "composition": {
+                    "LineEditor": {
+                      "opacityField": {
+                        "visibility": false
+                      },
+                      "widthField": {
+                        "default": 5
+                      }
+                    },
+                    "IconEditor": {
+                      "visibility": false
+                    }
+                  },
+                  "locale": {
+                    "Style": {
+                      "nameFieldLabel": "Style Name"
+                    }
+                  }
+                };
+
+                &lt;GeoStylerContext.Provider value={myContext}&gt;
+                  &lt;Style style={style} compact={true} /&gt;
+                &lt;/GeoStylerContext.Provider&gt;
+              </code></pre>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <!-- <section>
+          <h2>Neue Features</h2>
+          <div class="slide-content-default">
+            <h4>Unsupported Properties</h4>
+            TODO
+            <span>Unsupported Properties</span>
+          </div>
+          <footer>
+            <img src="../assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section> -->
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default">
+            <div>
+              <h4>Development</h4>
+              <span>Commitlint & Semantic-Release</span><br />
+              <small>Automated releases with consistent documentation</small><br />
+              <small>See <a href="https://github.com/geostyler/geostyler">GeoStyler Repository</a></small>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default">
+            <div>
+              <h4>Development</h4>
+              <span>Development on Windows</span><br />
+              <small>Dev-Setup now also works on Windows</small><br />
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>New Features</h2>
+          <div class="slide-content-default">
+            <div>
+              <h4>Development</h4>
+              <span>Function Components</span><br />
+              <small>Up-to-date code base for easier on-boarding</small><br />
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <div class="slide-content-default">
+            <h2>News from the Community</h2>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>News from the Community</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>GeoStyler Code Sprint 2022</h4>
+            <small>It's all about the style</small>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" />
+            <small>Thanks to all participants!</small>
+            <small><a href="https://geostyler.org/codesprint-2022/">Code Sprint 2022 Blogpost</a></small>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>News from the Community</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>GeoStyler Code Sprint 2023</h4>
+            <!-- <small>It's all about the style - again</small> -->
+            <small>08. - 12. Mai 2023</small>
+            <small>Bonn and online</small>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" />
+            <small>More info on <a href="https://geostyler.org">geostyler.org</a></small>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>News from the Community</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>Contributors</h4>
+            <span>Thanks to all contributors</span><br />
+            <small>that help to constantly improve GeoStyler</small><br />
+            <img class="img-shadow" src="../public/assets/geostyler/contributors.png" />
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>News from the Community</h2>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-areas:
+            'head head head'
+            'left main right'
+            'footer footer footer';">
+            <h4 style="grid-area: head;">How can I be part of the Community?</h4>
+            <div style="grid-area: left">
+              <img class="img-shadow" src="../public/assets/geostyler/issues-chart.png" width="450px"/>
+              <small>Issues since 2018</small>
+            </div>
+            <div style="grid-area: main; align-self: center;">
+              <ul class="list-narrow" style="font-size: smaller;">
+                <li>Use GeoStyler</li>
+                <li>Document bugs</li>
+                <li>Add feature requests</li>
+                <li>Update documentation</li>
+              </ul>
+            </div>
+            <div style="grid-area: right;">
+              <img class="img-shadow" src="../public/assets/geostyler/downloads-chart.png" width="450px"/>
+              <small>Downloads since 2018</small>
+            </div>
+            <div style="grid-area: footer;">
+              <small>Contributions of all kinds are welcome!</small>
+              <br />
+              <small>All info on <a href="https://geostyler.org">geostyler.org</a></small>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>News from the Community</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <h4>How can I try out GeoStyler?</h4>
+            <span>Info, docs &amp; tutorials on geostyler.org</span><br />
+            <iframe style="height: 450px" class="img-shadow" src="https://geostyler.org"></iframe>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <div class="slide-content-default">
+            <h2>What's next?</h2>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>What's next?</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>Improve style parsers</h4>
+            <small>especially</small>
+            <span>geostyler-mapbox-parser</span><br />
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>What's next?</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>Support of expressions in parsers and UI</h4>
+            <!-- TODO besseren code snippet verwenden -->
+            <pre style="width: unset"><code data-trim>
+              &lt;se:SvgParameter name="fill"&gt;
+                &lt;ogc:PropertyName&gt;Feature_Color&lt;/ogc:PropertyName&gt;
+              &lt;/se:SvgParameter&gt;
+            </code></pre>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h2>Thank you for your attention</h2><br />
+            <small>and enjoy FOSS4G 2023</small>
+          </div>
+          <footer>
+            <img src="../public/assets/geostyler/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - One Tool for all Styles, FOSS4G 2023, Prizren, Kosovo</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>Imprint</h2>
+          <div class="slide-content">
+            <h4>Authors</h4>
+            <div class="slide-content-horizontal" style="flex: unset">
+              <address style="text-align: left">
+                <strong>Jan Suleiman</strong><br />
+                <span style="font-size: smaller;">
+                  terrestris GmbH &amp; Co. KG<br />
+                  K&ouml;lnstr. 99, 53111 Bonn, Germany<br />
+                  suleiman@terrestris.de
+                </span>
+              </address>
+              <address style="text-align: right">
+                <strong>Daniel Koch</strong><br />
+                <span style="font-size: smaller;">
+                  terrestris GmbH &amp; Co. KG<br />
+                  K&ouml;lnstr. 99, 53111 Bonn, Germany<br />
+                  koch@terrestris.de
+                </span>
+              </address>
+            </div>
+          </div>
+          <div class="slide-content" style="flex: unset">
+            <h4 style="clear:both;">License</h4>
+            <p id="license">
+              <small>
+                Slides are published under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+                license.<br />
+                <a href="https://terrestris.github.io/foss4g2023">terrestris.github.io/foss4g2023</a><br />
+                <a href="https://github.com/terrestris/foss4g2023">git repository</a>
+              </small>
+            </p>
+          </div>
+        </section>
+			</div>
+		</div>
+
+		<script src="../public/reveal.js/dist/reveal.js"></script>
+		<script src="../public/reveal.js/plugin/notes/notes.js"></script>
+		<script src="../public/reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../public/reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+        width: '100%',
+        height: '100%',
+				hash: true,
+        controlsTutorial: false,
+        transition: 'fade',
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
