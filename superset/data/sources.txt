@@ -1,0 +1,15 @@
+Data: Installed Electricity Capacity [MW] for EU-27 for 2021
+
+Sources of data / download date: 	
+1	Eurostat energy and socio-economic statistics -April 2023; 
+2	Eurostat SHARES2021 - April 2023
+3	Eurostat electricity and gas market surveys -April 2023
+4	Eurostat CHP survey - November 2023
+5	Eurostat, ECFIN-AMECO and UN statistics GDP - April 2023
+6	EEA/UNFCCC - June 2023
+	
+For more detailed info and updates please consult Eurostat online database at: http://ec.europa.eu/eurostat/data/database 	
+For updates or more detailed CO2/GHG emissions data please consult EEA/UNFCCC at: https://www.eea.europa.eu/data-and-maps/data/national-emissions-reported-to-the-unfccc-and-to-the-eu-greenhouse-gas-monitoring-mechanism-16	
+
+
+

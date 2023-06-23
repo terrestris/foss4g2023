@@ -1,0 +1,31 @@
+Dashboard: http://localhost:8088/superset/dashboard/12
+
+PieChart
+  dimensions: type
+  metric: sum(value)
+  time column: date
+  show legend: false
+  show labels: false
+
+  Charttitle in Dashboard: Installed Electricity Capacity EU-27
+
+Pie Carto Chart
+  layer
+    url: http://localhost:8888
+    type: wfs
+    version: 1.1.0
+    layername: ms:electric_capacity
+    layertitle: ms:electric_capacity
+    attribution: Eurostat energy and socio-economic statistics -April 2023;  Eurostat SHARES2021 - April 2023 Eurostat electricity and gas market surveys -April 2023; Eurostat CHP survey - November 2023; Eurostat, ECFIN-AMECO and UN statistics GDP - April 2023; EEA/UNFCCC - June 2023
+    style:
+      line:
+        color: red
+        width: 2
+        opacity: 0.3
+  Chart
+    zoom: 4
+    baseWidth: 70
+    baseHeight: 70
+    shape: exp
+
+  Charttitle in Dashboard: Installed Electricity Capacity per State
