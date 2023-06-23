@@ -1,0 +1,31 @@
+ogr2ogr -f PostgreSQL "PG:host=localhost port=5555 user=postgres dbname=postgres password=postgres" data/intalled_capacity.gpkg
+
+"label_colors": {
+    "combustible_fuels": "black",
+    "nuclear": "#0edd4b",
+    "hydro": "#1cb5e3",
+    "wind": "#80d1e3",
+    "solar_pv": "#ffd52f",
+    "solar_thermal": "#ff872f",
+    "geothermal": "#6a751d",
+    "tide_wave_ocean": "#38d9e1",
+    "other": "#abb8c3"
+  },
+
+SELECT name, iso_a2, CAST('combustible_fuels' AS text) AS type, REPLACE(REPLACE(combustible_fuels, '.', ''), ',', '.')::DOUBLE PRECISION AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('nuclear' AS text) AS type, nuclear AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('hydro' AS text) AS type, hydro AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('wind' AS text) AS type, wind AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('solar_pv' AS text) AS type, solar_pv AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('solar_thermal' AS text) AS type, solar_thermal AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('geothermal' AS text) AS type, geothermal AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('tide_wave_ocean' AS text) AS type, tide_wave_ocean AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec
+UNION
+SELECT name, iso_a2, CAST('other' AS text) AS type, other AS value, DATE '2021-12-31', ST_AsGeoJSON(ST_CENTROID(geom)) as geom FROM public.intalled_electrical_capacity iec;
