@@ -9,13 +9,23 @@
    viewBox="0 0 1905 996"
    sodipodi:docname="motivation.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/home/jsuleiman/Projects/foss4g2023/public/assets/superset/motivation.png"
+   inkscape:export-xdpi="93"
+   inkscape:export-ydpi="93"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs1130" />
+     id="defs1130">
+    <rect
+       x="1113.141"
+       y="223.56612"
+       width="289.94548"
+       height="218.49479"
+       id="rect3779" />
+  </defs>
   <sodipodi:namedview
      id="namedview1128"
      pagecolor="#ffffff"
@@ -24787,5 +24797,36 @@ EEumDAAAAABALJkyAAAAAACxZMoAAAAAAMSSKQMAAAAAEEumDAAAAABArP8AY/5e4sIr1GYAAAAA
 SUVORK5CYII=
 "
        id="image1134" />
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:7.55906;stroke-linejoin:round;fill-opacity:0.89821357"
+       id="rect1259"
+       width="1219.5519"
+       height="445.9884"
+       x="653.57837"
+       y="88.43438" />
+    <rect
+       style="fill:#ffffff;fill-opacity:0.898214;stroke:none;stroke-width:7.55906;stroke-linejoin:round"
+       id="rect2097"
+       width="1846.4282"
+       height="389.46738"
+       x="26.35186"
+       y="557.8158" />
+    <text
+       xml:space="preserve"
+       id="text3777"
+       style="font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect3779);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="1113.1406"
+         y="393.44141"
+         id="tspan7775">?</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:192px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="831.47345"
+       y="820.84406"
+       id="text6447"><tspan
+         sodipodi:role="line"
+         id="tspan6445"
+         x="831.47345"
+         y="820.84406">?</tspan></text>
   </g>
 </svg>
